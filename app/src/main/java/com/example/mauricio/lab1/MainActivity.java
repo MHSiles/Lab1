@@ -41,7 +41,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 EditText mensaje = (EditText) findViewById(R.id.mensaje);
-                TextView display = (TextView) findViewById(R.id.mensaje_impreso);
+
+                Intent intent = new Intent(getBaseContext(), Actividad2.class);
+                intent.putExtra("Nombre", mensaje.getText().toString());
+                startActivity(intent);
+
+
+
+                /*TextView display = (TextView) findViewById(R.id.mensaje_impreso);
 
                 String str = mensaje.getText().toString();
 
@@ -49,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     display.setText("¿No tienes nombre?");
                 }else {
                     display.setText("¡Hola, " + str + "!");
-                }
+                }*/
             }
         });
 
